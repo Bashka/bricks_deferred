@@ -1,0 +1,26 @@
+{
+    "name": "bashka/bricks_deferred",
+    "version": "1.0.0",
+    "description": "Планировщик отложенных задач",
+    "license": "GNU-3.0",
+    "authors": [
+        {
+            "name": "Artur Sh. Mamedbekov",
+            "email": "Artur-Mamedbekov@yandex.ru"
+        }
+    ],
+    "require": {
+      "php": ">=5.5.0"
+    },
+    "autoload": {
+      "classmap": [
+        "Queue/Task.php",
+        "Queue/Queue.php",
+        "Queue/ArrayQueue.php",
+        "Queue/FileQueue.php",
+        "Queue/RelationDbQueue.php",
+        "Handler.php",
+        "TaskManager.php"
+      ]
+    }
+}
