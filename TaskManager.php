@@ -51,7 +51,7 @@ class TaskManager{
 	 *
 	 * @param callable $handlerFactory Фабрика обработчиков.
 	 */
-	public function handlerFactory(callable $handlerFactory){
+	public function setHandlerFactory(callable $handlerFactory){
 		$this->handlerFactory = $handlerFactory;
 	}
 
@@ -61,7 +61,7 @@ class TaskManager{
 	 *
 	 * @param callable $errorHandler Обработчик исключительных ситуаций.
 	 */
-	public function errorHandler(callable $errorHandler){
+	public function setErrorHandler(callable $errorHandler){
 		$this->errorHandler = $errorHandler;
 	}
 

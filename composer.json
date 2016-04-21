@@ -1,6 +1,6 @@
 {
     "name": "bashka/bricks_deferred",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Планировщик отложенных задач",
     "license": "GNU-3.0",
     "authors": [

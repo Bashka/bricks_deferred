@@ -73,19 +73,19 @@ class TaskManagerTest extends \PHPUnit_Framework_TestCase{
 	}
 
 
-	public function testHandlerFactory(){
+	public function testSetHandlerFactory(){
 		$queue = $this->createMockQueue();
 		$manager = $this->createManagerWithMockQueue($queue);
 
-		$manager->handlerFactory(function($handler){
+		$manager->setHandlerFactory(function($handler){
 		});
 	}
 
-	public function testErrorHandler(){
+	public function testSetErrorHandler(){
 		$queue = $this->createMockQueue();
 		$manager = $this->createManagerWithMockQueue($queue);
 
-		$manager->errorHandler(function(\Exception $exception){
+		$manager->setErrorHandler(function(\Exception $exception){
 		});
 	}
 
