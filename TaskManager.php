@@ -25,11 +25,11 @@ class TaskManager{
 	private $errorHandler;
 
 	protected function createHandler($handler){
-		return $this->handlerFactory($handler);
+		return call_user_func_array($this->handlerFactory, [$handler]);
 	}
 
 	protected function handleError(\Exception $exception){
-		$this->errorHandler($exception);
+		return call_user_func_array($this->errorHandler, [$exception]);
 	}
 
 	/**
