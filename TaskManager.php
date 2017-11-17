@@ -98,7 +98,7 @@ class TaskManager{
 				$handler->handle($task->data);
 			}
 			catch(\Exception $exception){
-				$this->handleError($exception);
+				$this->handleError($task->id, $exception);
 			}
 			$this->queue->done($task->id);
 		}
