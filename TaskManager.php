@@ -28,8 +28,8 @@ class TaskManager{
 		return call_user_func_array($this->handlerFactory, [$handler]);
 	}
 
-	protected function handleError(\Exception $exception){
-		return call_user_func_array($this->errorHandler, [$exception]);
+	protected function handleError($taskId, \Exception $exception){
+		return call_user_func_array($this->errorHandler, [$taskId, $exception]);
 	}
 
 	/**
@@ -99,6 +99,7 @@ class TaskManager{
 			}
 			catch(\Exception $exception){
 				$this->handleError($task->id, $exception);
+				continue;
 			}
 			$this->queue->done($task->id);
 		}
