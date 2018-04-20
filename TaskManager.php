@@ -97,7 +97,7 @@ class TaskManager{
 			try{
 				$handler->handle($task->data);
 			}
-			catch(\Exception $exception){
+			catch(\Throwable $exception){
 				$this->handleError($task->id, $exception);
 				continue;
 			}
