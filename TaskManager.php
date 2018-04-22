@@ -28,7 +28,7 @@ class TaskManager{
 		return call_user_func_array($this->handlerFactory, [$handler]);
 	}
 
-	protected function handleError($taskId, \Exception $exception){
+	protected function handleError($taskId, $exception){
 		return call_user_func_array($this->errorHandler, [$taskId, $exception]);
 	}
 
@@ -40,7 +40,7 @@ class TaskManager{
 		$this->handlerFactory = function($handler){
 			return new $handler;
 		};
-		$this->errorHandler = function(\Exception $exception){
+		$this->errorHandler = function($taskId, $exception){
 		};
 	}
 
